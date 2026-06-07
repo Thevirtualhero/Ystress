@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- ===== PRIMARY SEO ===== -->
+<title>Ystress — WhatsApp Automation for Hotels, Restaurants & Hospitals</title>
+<meta name="description" content="Ystress builds WhatsApp automation for hotels, restaurants and hospitals — bookings, reminders, confirmations and 24/7 support, handled the moment a guest messages." />
+<meta name="keywords" content="WhatsApp automation, WhatsApp business automation, chatbot, hotel booking automation, restaurant reservation bot, hospital appointment automation, WhatsApp API, customer support automation, Ystress" />
+<meta name="author" content="Ystress" />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#0a0418" />
+<link rel="canonical" href="https://ystress.onrender.com/" />
+
+<!-- ===== FAVICON / ICONS ===== -->
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+<link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+
+<!-- ===== OPEN GRAPH (WhatsApp / Facebook / LinkedIn) ===== -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Ystress" />
+<meta property="og:title" content="Ystress — WhatsApp Automation for Hotels, Restaurants & Hospitals" />
+<meta property="og:description" content="WhatsApp automation for hotels, restaurants and hospitals — bookings, reminders, confirmations and 24/7 support, handled instantly." />
+<meta property="og:url" content="https://ystress.onrender.com/" />
+<meta property="og:image" content="https://ystress.onrender.com/og-image.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="en_US" />
+
+<!-- ===== TWITTER CARD ===== -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Ystress — WhatsApp Automation" />
+<meta name="twitter:description" content="WhatsApp automation for hotels, restaurants and hospitals — bookings, reminders and support, handled instantly." />
+<meta name="twitter:image" content="https://ystress.onrender.com/og-image.jpg" />
+
+<!-- ===== STRUCTURED DATA (JSON-LD) ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Ystress",
+  "url": "https://ystress.onrender.com/",
+  "logo": "https://ystress.onrender.com/ys_logo.png",
+  "description": "WhatsApp automation for hotels, restaurants and hospitals — bookings, reminders, confirmations and 24/7 support.",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+91-97908-95262",
+    "contactType": "customer service",
+    "areaServed": "IN",
+    "availableLanguage": ["English", "Tamil"]
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Ystress",
+  "url": "https://ystress.onrender.com/"
+}
+</script>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Viaoda+Libre&family=Imprima&display=swap" />
+<style>
+  :root{
+    --bg:#060309;
+    --ink-magenta:#c64bd8; --ink-pink:#e85bb5; --ink-cyan:#46b6e8; --ink-blue:#5a6fe8;
+    --accent:#d44ad0; --accent-2:#4fd0e8; --text-soft:rgba(255,255,255,0.82);
+  }
+  html,body{margin:0;padding:0;background:var(--bg);scroll-behavior:auto;}
+  html{scrollbar-gutter:stable;}
+  body{font-family:'Imprima',sans-serif;}
+  *{box-sizing:border-box;}
+  @keyframes bobUp{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
+  a{text-decoration:none;cursor:pointer;}
+
+  #page{height:480vh;position:relative;z-index:1;background:var(--bg);}
+  #stage{position:sticky;top:0;height:100vh;width:100%;overflow:hidden;}
+
+  #video-wrap{position:absolute;inset:0;z-index:1;will-change:transform;transform-origin:50% 42%;}
+  #bgvideo{width:100%;height:100%;object-fit:cover;display:block;}
+  #grade{position:absolute;inset:0;z-index:2;pointer-events:none;
+    background:
+      radial-gradient(120% 90% at 50% 35%, rgba(198,75,216,0.12) 0%, transparent 55%),
+      radial-gradient(120% 90% at 30% 70%, rgba(70,182,232,0.10) 0%, transparent 55%),
+      linear-gradient(180deg, rgba(6,3,9,0.35) 0%, rgba(6,3,9,0.05) 35%, rgba(6,3,9,0.55) 100%);}
+  #vignette{position:absolute;inset:0;z-index:3;pointer-events:none;
+    box-shadow:inset 0 0 220px 60px rgba(6,3,9,0.85);}
+
+  nav{position:absolute;top:0;left:0;right:0;z-index:50;padding:22px 48px;
+    display:flex;align-items:center;justify-content:space-between;opacity:0;transition:opacity .9s ease;}
+  nav::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+    background:linear-gradient(180deg,rgba(8,3,16,0.55) 0%,rgba(8,3,16,0.18) 70%,transparent 100%);}
+  nav.show{opacity:1;}
+  .brand{display:flex;align-items:center;gap:9px;flex-shrink:0;}
+  .brand-logo{height:38px;width:auto;display:block;filter:drop-shadow(0 2px 8px rgba(0,0,0,0.5));}
+  .brand-name{font-family:'Viaoda Libre',serif;font-size:22px;color:#fff;letter-spacing:0.02em;}
+  .nav-group{display:flex;gap:32px;align-items:center;}
+  .nav-link{text-transform:uppercase;font-size:12px;letter-spacing:0.12em;color:#fff;opacity:0.92;
+    font-family:'Imprima',sans-serif;transition:opacity .25s ease,text-shadow .25s ease;background:none;border:none;cursor:pointer;
+    text-shadow:0 1px 12px rgba(0,0,0,0.6);}
+  .nav-link:hover{opacity:1;text-shadow:0 0 14px rgba(212,74,208,0.8);}
+
+  #hero1{position:absolute;inset:0;z-index:45;}
+  #hero2{position:absolute;inset:0;z-index:46;opacity:0;display:flex;align-items:center;
+    justify-content:center;pointer-events:none;}
+
+  .entrance{transform:translateY(20px);opacity:0;
+    transition:transform .9s ease .3s,opacity .9s ease .3s;}
+  .entrance.show{transform:translateY(0);opacity:1;}
+
+  h1.head,h2.head{font-family:'Viaoda Libre',serif;margin:0;line-height:1.04;letter-spacing:0.02em;font-weight:400;}
+  .head .arrow{background:linear-gradient(90deg,var(--ink-magenta),var(--ink-cyan));
+    -webkit-background-clip:text;background-clip:text;color:transparent;}
+  .head .glow-word{background:linear-gradient(100deg,#fff 0%,var(--ink-pink) 55%,var(--ink-cyan) 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;}
+  p.para{font-family:'Imprima',sans-serif;line-height:1.6;margin-top:18px;}
+
+  .cta{display:inline-flex;align-items:center;gap:10px;
+    background:linear-gradient(100deg,var(--ink-magenta),var(--ink-cyan));color:#0a0312;border:none;
+    border-radius:40px;font-weight:600;font-family:'Imprima',sans-serif;letter-spacing:0.06em;
+    cursor:pointer;transition:transform .3s ease,box-shadow .3s ease;text-decoration:none;}
+  .cta:hover{transform:translateY(-2px);}
+
+  /* showcase video card on the right */
+  .showcase{
+    width:420px;max-width:42vw;border-radius:24px;overflow:hidden;position:relative;
+    box-shadow:0 26px 70px rgba(198,75,216,0.35),0 0 0 1px rgba(212,74,208,0.35);
+    transition:transform .5s cubic-bezier(.22,1,.36,1),box-shadow .5s ease;
+  }
+  .showcase:hover{transform:translateY(-6px);box-shadow:0 32px 80px rgba(70,182,232,0.4),0 0 0 1px rgba(79,208,232,0.5);}
+  .showcase video{width:100%;display:block;object-fit:cover;image-rendering:auto;}
+  .showcase .badge{
+    position:absolute;left:0;right:0;bottom:0;padding:16px 18px;display:flex;align-items:center;gap:10px;
+    backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+    background:linear-gradient(to top,rgba(0,0,0,0.78) 0%,rgba(0,0,0,0.15) 70%,transparent 100%);}
+  .showcase .badge .dot{width:9px;height:9px;border-radius:50%;
+    background:linear-gradient(135deg,var(--ink-pink),var(--ink-cyan));flex-shrink:0;
+    box-shadow:0 0 10px rgba(232,91,181,0.9);}
+  .showcase .badge span{color:#fff;font-size:13px;letter-spacing:0.06em;}
+
+  #dots{position:absolute;bottom:60px;left:60px;display:flex;gap:8px;}
+  #dots span{height:4px;border-radius:4px;display:block;}
+
+  #cue{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);
+    display:flex;flex-direction:column;align-items:center;gap:10px;}
+  #cue .label{text-transform:uppercase;font-size:10px;letter-spacing:0.22em;
+    color:rgba(255,255,255,0.6);font-family:'Imprima',sans-serif;}
+  #cue .ring{width:34px;height:34px;border-radius:50%;border:1px solid rgba(212,74,208,0.5);
+    display:flex;align-items:center;justify-content:center;animation:bobUp 1.8s ease-in-out infinite;
+    box-shadow:0 0 18px rgba(212,74,208,0.4);}
+
+  #hero1-left{position:absolute;top:46%;left:60px;transform:translateY(-50%);max-width:460px;}
+  #hero1-right{position:absolute;top:50%;right:48px;transform:translateY(-50%);}
+  #hero1-mobile,#hero1-tablet{display:none;}
+
+  /* ===== SERVICES SECTION ===== */
+  #services{position:absolute;inset:0;z-index:44;opacity:0;display:flex;flex-direction:column;
+    align-items:center;justify-content:flex-start;pointer-events:none;padding:96px 48px 36px;}
+  .svc-head-wrap{position:relative;z-index:3;text-align:center;margin-bottom:18px;
+    padding:10px 26px;border-radius:18px;}
+  #services .svc-head{font-family:'Viaoda Libre',serif;font-weight:400;color:#fff;
+    font-size:clamp(26px,3.4vw,42px);letter-spacing:0.03em;text-align:center;margin:0 0 8px;
+    text-shadow:0 2px 30px rgba(0,0,0,0.85),0 2px 26px rgba(198,75,216,0.45);}
+  #services .svc-sub{font-family:'Imprima',sans-serif;color:#fff;font-size:15px;
+    letter-spacing:0.04em;text-align:center;margin:0 auto;max-width:560px;line-height:1.5;
+    text-shadow:0 2px 16px rgba(0,0,0,0.9);}
+  /* coverflow */
+  .cf-stage{position:relative;z-index:2;width:100%;max-width:1080px;height:300px;margin-top:0;
+    display:flex;align-items:flex-start;justify-content:center;perspective:1500px;}
+  .svc-card{position:absolute;width:min(360px,72vw);border-radius:22px;overflow:hidden;cursor:pointer;
+    background:linear-gradient(160deg,#1c0c26,#0a0412);
+    border:1px solid rgba(212,74,208,0.28);
+    box-shadow:0 22px 60px rgba(198,75,216,0.22),inset 0 0 0 1px rgba(255,255,255,0.03);
+    transition:transform .7s cubic-bezier(.22,1,.36,1),opacity .7s ease,box-shadow .5s ease,border-color .5s ease;
+    transform-style:preserve-3d;will-change:transform,opacity;}
+  .svc-card.active{border-color:rgba(79,208,232,0.5);box-shadow:0 36px 90px rgba(198,75,216,0.4);}
+  .svc-card .svc-img{width:100%;height:172px;display:block;}
+  /* ===== service photo ===== */
+  .svc-photo{position:relative;overflow:hidden;background:#0a0418;}
+  .svc-photo img{width:100%;height:100%;object-fit:cover;display:block;
+    transition:transform .8s cubic-bezier(.22,1,.36,1);}
+  .svc-card.active .svc-photo img{transform:scale(1.04);}
+  .svc-photo::after{content:"";position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(180deg,rgba(10,4,24,0) 55%,rgba(10,4,24,0.55) 100%);}
+  .svc-card .svc-body{padding:18px 22px 22px;}
+  .svc-card .svc-title{font-family:'Viaoda Libre',serif;font-weight:400;color:#fff;font-size:23px;
+    margin:0 0 8px;letter-spacing:0.02em;}
+  .svc-card .svc-text{font-family:'Imprima',sans-serif;color:var(--text-soft);font-size:13px;
+    line-height:1.55;margin:0;}
+  .svc-card .svc-tag{display:inline-block;margin-top:13px;font-size:11px;letter-spacing:0.12em;
+    text-transform:uppercase;color:#fff;padding:5px 12px;border-radius:30px;
+    background:linear-gradient(100deg,rgba(198,75,216,0.32),rgba(70,182,232,0.32));
+    border:1px solid rgba(212,74,208,0.4);}
+  /* arrows + dots */
+  .cf-nav{display:flex;gap:14px;justify-content:center;margin-top:30px;}
+  .cf-arrow{width:44px;height:44px;border-radius:50%;cursor:pointer;
+    background:rgba(20,8,28,0.6);border:1px solid rgba(212,74,208,0.4);
+    display:flex;align-items:center;justify-content:center;transition:all .3s ease;}
+  .cf-arrow:hover{border-color:var(--ink-cyan);transform:translateY(-2px);box-shadow:0 0 18px rgba(212,74,208,0.4);}
+  .cf-dots{display:flex;gap:9px;justify-content:center;margin-top:18px;}
+  .cf-dots button{height:6px;width:6px;border-radius:6px;border:none;padding:0;cursor:pointer;
+    background:rgba(255,255,255,0.3);transition:all .35s ease;}
+  .cf-dots button.on{width:26px;background:linear-gradient(90deg,var(--ink-magenta),var(--ink-cyan));}
+  @media (max-width:1099px){
+    #services{padding:0 24px;justify-content:flex-start;padding-top:84px;}
+    #services .svc-head{font-size:clamp(26px,5vw,40px);margin-top:8px;}
+    #services .svc-sub{font-size:13.5px;margin-bottom:24px;max-width:440px;}
+    .cf-stage{height:320px;}
+    .svc-card{width:min(340px,80vw);}
+    .svc-card .svc-img{height:150px;}
+  }
+  @media (max-width:767px){
+    #services{padding:0 16px;padding-top:74px;}
+    #services .svc-head{font-size:26px;}
+    #services .svc-sub{font-size:12.5px;margin-bottom:18px;line-height:1.5;}
+    .cf-stage{height:340px;}
+    .svc-card{width:86vw;max-width:360px;}
+    .svc-card .svc-img{height:140px;}
+    .svc-card .svc-body{padding:16px 18px 18px;}
+    .svc-card .svc-title{font-size:21px;}
+    .cf-nav{margin-top:22px;}
+    .cf-arrow{width:48px;height:48px;}
+  }
+
+  @media (min-width:768px) and (max-width:1099px){
+    #hero1-left,#hero1-right,#cue{display:none;}
+    #hero1-tablet{display:flex;flex-direction:column;align-items:center;justify-content:center;
+      text-align:center;position:absolute;inset:0;padding:0 32px;}
+    #dots{left:50%;transform:translateX(-50%);}
+    .nav-group.left{display:none;}
+  }
+  @media (max-width:767px){
+    nav{padding:16px 18px;}
+    .brand-name{font-size:19px;}
+    .brand-logo{height:32px;}
+    .nav-group.left{display:none;}
+    .nav-group.right{display:none;}
+    #hero1-left,#hero1-right,#cue{display:none;}
+    #hero1-mobile{display:flex;flex-direction:column;align-items:center;justify-content:center;
+      text-align:center;position:absolute;inset:0;padding:0 24px;}
+    #dots{left:50%;transform:translateX(-50%);bottom:28px;}
+    nav .mobile-only{display:inline;}
+  }
+  @media (min-width:768px){nav .mobile-only{display:none;}}
+  /* ===================== PAGE SECTIONS (About / Contact / Footer) ===================== */
+  /* fixed background video behind the lower sections */
+  #page-bg-video{position:fixed;inset:0;z-index:0;overflow:hidden;background:#0a0414;pointer-events:none;}
+  #page-bg-video video{position:absolute;top:50%;left:50%;min-width:100%;min-height:100%;
+    width:auto;height:auto;transform:translate(-50%,-50%);object-fit:cover;opacity:0.55;}
+  #page-bg-video::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(8,3,16,0.72),rgba(8,3,16,0.82));}
+  .pg-section{position:relative;z-index:5;background:rgba(10,4,20,0.55);padding:90px 24px;
+    border-top:1px solid rgba(212,74,208,0.12);backdrop-filter:blur(2px);}
+  .pg-alt{background:rgba(12,5,24,0.62);}
+  .pg-wrap{max-width:1080px;margin:0 auto;}
+  .pg-narrow{max-width:680px;}
+  .pg-kicker{text-transform:uppercase;letter-spacing:0.18em;font-size:12px;font-weight:600;
+    font-family:'Imprima',sans-serif;color:var(--ink-cyan);text-align:center;margin-bottom:14px;}
+  .pg-h2{font-family:'Viaoda Libre',serif;font-weight:400;color:#fff;text-align:center;
+    font-size:clamp(28px,4vw,46px);line-height:1.1;margin:0 0 18px;letter-spacing:0.02em;}
+  .pg-lead{font-family:'Imprima',sans-serif;color:var(--text-soft);text-align:center;
+    font-size:16px;line-height:1.65;max-width:620px;margin:0 auto 46px;}
+  .pg-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .pg-card{background:linear-gradient(160deg,rgba(28,12,38,0.8),rgba(10,4,18,0.9));
+    border:1px solid rgba(212,74,208,0.22);border-radius:20px;padding:30px 26px;
+    box-shadow:0 18px 50px rgba(198,75,216,0.14);transition:transform .4s ease,border-color .4s ease;}
+  .pg-card:hover{transform:translateY(-6px);border-color:rgba(79,208,232,0.45);}
+  .pg-ico{font-size:30px;margin-bottom:14px;}
+  .pg-card h3{font-family:'Viaoda Libre',serif;font-weight:400;color:#fff;font-size:21px;margin:0 0 8px;}
+  .pg-card p{font-family:'Imprima',sans-serif;color:var(--text-soft);font-size:14px;line-height:1.6;margin:0;}
+  /* contact form */
+  .pg-form{display:flex;flex-direction:column;gap:18px;text-align:left;}
+  .pg-field{display:flex;flex-direction:column;gap:7px;}
+  .pg-field label{font-family:'Imprima',sans-serif;font-size:13px;letter-spacing:0.04em;color:rgba(255,255,255,0.75);}
+  .pg-field input,.pg-field textarea{font-family:'Imprima',sans-serif;font-size:15px;color:#fff;
+    background:rgba(20,8,28,0.7);border:1px solid rgba(212,74,208,0.3);border-radius:12px;
+    padding:13px 15px;outline:none;transition:border-color .25s ease,box-shadow .25s ease;resize:vertical;}
+  .pg-field input::placeholder,.pg-field textarea::placeholder{color:rgba(255,255,255,0.35);}
+  .pg-field input:focus,.pg-field textarea:focus{border-color:var(--ink-cyan);box-shadow:0 0 0 3px rgba(79,208,232,0.18);}
+  .pg-form .cta{align-self:flex-start;margin-top:4px;}
+  .pg-direct{font-family:'Imprima',sans-serif;font-size:14px;color:var(--text-soft);margin-top:4px;}
+  .pg-direct a{color:var(--ink-cyan);text-decoration:none;cursor:pointer;}
+  .pg-direct a:hover{text-decoration:underline;}
+  /* footer */
+  #footer{position:relative;z-index:5;background:rgba(7,3,16,0.78);border-top:1px solid rgba(212,74,208,0.18);padding:56px 24px 0;backdrop-filter:blur(2px);}
+  .pg-foot{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;max-width:1080px;margin:0 auto;}
+  .pg-foot-brand img{height:34px;width:auto;display:inline-block;vertical-align:middle;}
+  .pg-foot-brand span{font-family:'Viaoda Libre',serif;font-size:22px;color:#fff;margin-left:8px;vertical-align:middle;}
+  .pg-foot-brand p{font-family:'Imprima',sans-serif;color:var(--text-soft);font-size:13.5px;line-height:1.6;margin:14px 0 0;max-width:320px;}
+  .pg-foot-col h4{font-family:'Imprima',sans-serif;text-transform:uppercase;letter-spacing:0.12em;
+    font-size:12px;color:#fff;margin:0 0 14px;}
+  .pg-foot-col a{display:block;font-family:'Imprima',sans-serif;color:var(--text-soft);font-size:14px;
+    text-decoration:none;margin-bottom:10px;cursor:pointer;transition:color .25s ease;}
+  .pg-foot-col a:hover{color:var(--ink-cyan);}
+  .pg-copy{text-align:center;font-family:'Imprima',sans-serif;color:rgba(255,255,255,0.4);font-size:12.5px;
+    padding:30px 0;margin-top:40px;border-top:1px solid rgba(255,255,255,0.06);}
+  @media (max-width:860px){
+    .pg-grid3{grid-template-columns:1fr;}
+    .pg-foot{grid-template-columns:1fr 1fr;}
+    .pg-foot-brand{grid-column:1 / -1;}
+  }
+  @media (max-width:520px){
+    .pg-section{padding:64px 18px;}
+    .pg-foot{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+<div id="page-bg-video">
+  <video autoplay muted loop playsinline>
+    <source src="bg-video.mp4" type="video/mp4" />
+  </video>
+</div>
+<div id="page">
+  <div id="stage">
+    <div id="video-wrap">
+      <video id="bgvideo" autoplay muted loop playsinline>
+        <source src="bg-video.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div id="grade"></div>
+    <div id="vignette"></div>
+
+    <nav id="nav">
+      <a class="brand" href="#" onclick="scrollToProgress(0);return false;">
+        <img class="brand-logo" src="ys_logo.png" alt="Ystress logo"/>
+        <span class="brand-name">Ystress</span>
+      </a>
+      <div class="nav-group left">
+        <a class="nav-link" href="#" onclick="goSlide(0);return false;">Services</a>
+        <a class="nav-link" href="#" onclick="goSlide(1);return false;">Workflows</a>
+        <a class="nav-link" href="#" onclick="goSlide(2);return false;">Industries</a>
+      </div>
+      <div class="nav-group right">
+        <a class="nav-link" href="#" onclick="scrollToProgress(1);return false;">Results</a>
+        <a class="nav-link js-connect" href="#">Connect</a>
+      </div>
+      <a class="nav-link mobile-only js-connect" href="#">Connect</a>
+    </nav>
+
+    <div id="hero1">
+      <div id="hero1-left" class="entrance">
+        <h1 class="head" style="color:#fff;font-size:72px;">AUTOMATE <span class="arrow">&rsaquo;</span> <span class="glow-word">EVERY MESSAGE</span></h1>
+        <p class="para" style="color:var(--text-soft);max-width:460px;font-size:18px;">
+          We build WhatsApp automation for hotels, restaurants and hospitals &mdash; bookings, reminders, confirmations and support, handled the moment a guest writes in.
+        </p>
+        <a class="cta js-whatsapp" href="#" style="margin-top:26px;padding:13px 24px;font-size:14px;box-shadow:0 12px 34px rgba(198,75,216,0.45);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#0a0312"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.06 2.87 1.21 3.07.15.2 2.09 3.2 5.07 4.49.71.31 1.26.49 1.69.62.71.23 1.36.19 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35zM12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.07L2 22l5.05-1.32A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+
+      <div id="hero1-right" class="entrance">
+        <div class="showcase">
+          <video autoplay muted loop playsinline>
+            <source src="showcase-video.mp4" type="video/mp4" />
+          </video>
+          <div class="badge"><span class="dot"></span><span>WhatsApp &amp; Data Automation</span></div>
+        </div>
+      </div>
+
+      <div id="hero1-tablet" class="entrance">
+        <h1 class="head" style="color:#fff;font-size:54px;">AUTOMATE <span class="arrow">&rsaquo;</span> <span class="glow-word">EVERY MESSAGE</span></h1>
+        <p class="para" style="color:var(--text-soft);max-width:420px;font-size:16px;">
+          We build WhatsApp automation for hotels, restaurants and hospitals &mdash; bookings, reminders, confirmations and support, handled the moment a guest writes in.
+        </p>
+        <div class="showcase" style="width:420px;max-width:78vw;margin-top:30px;">
+          <video autoplay muted loop playsinline>
+            <source src="showcase-video.mp4" type="video/mp4" />
+          </video>
+          <div class="badge"><span class="dot"></span><span>WhatsApp &amp; Data Automation</span></div>
+        </div>
+        <a class="cta js-whatsapp" href="#" style="margin-top:26px;padding:13px 24px;font-size:14px;box-shadow:0 12px 30px rgba(198,75,216,0.4);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#0a0312"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.06 2.87 1.21 3.07.15.2 2.09 3.2 5.07 4.49.71.31 1.26.49 1.69.62.71.23 1.36.19 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35zM12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.07L2 22l5.05-1.32A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+
+      <div id="hero1-mobile" class="entrance">
+        <h1 class="head" style="color:#fff;font-size:40px;">AUTOMATE <span class="arrow">&rsaquo;</span> <span class="glow-word">EVERY MESSAGE</span></h1>
+        <p class="para" style="color:var(--text-soft);max-width:280px;font-size:14px;">
+          WhatsApp automation for hotels, restaurants and hospitals &mdash; bookings, reminders and support, handled instantly.
+        </p>
+        <div class="showcase" style="width:94vw;max-width:520px;margin-top:22px;">
+          <video autoplay muted loop playsinline>
+            <source src="showcase-video.mp4" type="video/mp4" />
+          </video>
+          <div class="badge"><span class="dot"></span><span>WhatsApp &amp; Data Automation</span></div>
+        </div>
+        <a class="cta js-whatsapp" href="#" style="margin-top:22px;padding:13px 24px;font-size:14px;box-shadow:0 12px 30px rgba(198,75,216,0.4);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#0a0312"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.06 2.87 1.21 3.07.15.2 2.09 3.2 5.07 4.49.71.31 1.26.49 1.69.62.71.23 1.36.19 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35zM12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.07L2 22l5.05-1.32A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+
+      <div id="dots">
+        <span style="width:28px;background:linear-gradient(90deg,var(--ink-magenta),var(--ink-cyan));opacity:1;"></span>
+        <span style="width:14px;background:#fff;opacity:0.35;"></span>
+        <span style="width:14px;background:#fff;opacity:0.35;"></span>
+        <span style="width:14px;background:#fff;opacity:0.35;"></span>
+      </div>
+
+      <div id="cue">
+        <span class="label">Descend</span>
+        <span class="ring"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="rgba(255,255,255,0.85)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </div>
+    </div>
+
+    <div id="services">
+      <div class="svc-head-wrap">
+        <h2 class="svc-head">WHAT WE <span class="glow-word">AUTOMATE</span></h2>
+        <p class="svc-sub">Three ways we put WhatsApp to work &mdash; swipe through what we build, how the flows run, and who we build for.</p>
+      </div>
+      <div class="cf-stage" id="cfStage">
+
+        <div class="svc-card" data-i="0">
+          <div class="svc-img svc-photo">
+            <img src="svc_service_web.jpg" alt="Services — AI WhatsApp automation" loading="lazy"/>
+          </div>
+          <div class="svc-body">
+            <h3 class="svc-title">Services</h3>
+            <p class="svc-text">Done-for-you message automation — bots that greet, answer, confirm and follow up, so your team never types the same reply twice.</p>
+            <span class="svc-tag">Auto-replies &amp; Handoff</span>
+          </div>
+        </div>
+
+        <div class="svc-card" data-i="1">
+          <div class="svc-img svc-photo">
+            <img src="svc_workflow_web.jpg" alt="Workflows — automated decision routing" loading="lazy"/>
+          </div>
+          <div class="svc-body">
+            <h3 class="svc-title">Workflows</h3>
+            <p class="svc-text">Flows that think before they reply — a trigger comes in, the flow checks the details, then routes to a confirmation, a booking, or a human.</p>
+            <span class="svc-tag">Triggers &amp; Routing</span>
+          </div>
+        </div>
+
+        <div class="svc-card" data-i="2">
+          <div class="svc-img svc-photo">
+            <img src="svc_industries_web.jpg" alt="Industries — hospitality and healthcare" loading="lazy"/>
+          </div>
+          <div class="svc-body">
+            <h3 class="svc-title">Industries</h3>
+            <p class="svc-text">Built for hospitality &amp; healthcare — hotels, restaurants and hospitals each get a tailored playbook for the way their guests and patients message.</p>
+            <span class="svc-tag">Hotels · Food · Health</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="cf-nav">
+        <button class="cf-arrow" onclick="cfPrev()" aria-label="Previous">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="cf-arrow" onclick="cfNext()" aria-label="Next">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+      <div class="cf-dots" id="cfDots"></div>
+    </div>
+
+    <div id="hero2">
+      <div style="text-align:center;padding:0 24px;">
+        <h2 class="head" style="font-size:clamp(38px,7vw,78px);color:#fff;letter-spacing:0.03em;line-height:1.05;text-shadow:0 2px 30px rgba(198,75,216,0.5);">
+          SCALE <span class="glow-word">BEYOND</span> THE INBOX
+        </h2>
+        <p class="para" style="font-size:20px;max-width:480px;color:var(--text-soft);margin:22px auto 0;">
+          Tailored automation flows for hospitality and healthcare teams, shaped for those who want every guest, patient and order handled instantly &mdash; around the clock.
+        </p>
+        <a class="cta js-demo" href="#" style="margin-top:34px;padding:15px 30px;font-size:15px;box-shadow:0 14px 40px rgba(198,75,216,0.5);">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#0a0312"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.06 2.87 1.21 3.07.15.2 2.09 3.2 5.07 4.49.71.31 1.26.49 1.69.62.71.23 1.36.19 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35zM12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.07L2 22l5.05-1.32A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+          Book a Free Demo
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== ABOUT ===================== -->
+<section id="about" class="pg-section">
+  <div class="pg-wrap">
+    <div class="pg-kicker">Who we are</div>
+    <h2 class="pg-h2">Built to make every <span class="glow-word">conversation</span> count</h2>
+    <p class="pg-lead">Ystress designs and runs WhatsApp automation for hotels, restaurants and hospitals. We turn the messages your business already receives into bookings, confirmations and happy guests &mdash; without adding work for your team.</p>
+    <div class="pg-grid3">
+      <div class="pg-card">
+        <div class="pg-ico">⚡</div>
+        <h3>Fast to launch</h3>
+        <p>We map your flow and go live in days, not weeks. No technical work on your side.</p>
+      </div>
+      <div class="pg-card">
+        <div class="pg-ico">🤝</div>
+        <h3>Made for your business</h3>
+        <p>Every flow is tailored to how your guests, diners and patients actually message you.</p>
+      </div>
+      <div class="pg-card">
+        <div class="pg-ico">🛟</div>
+        <h3>Always supported</h3>
+        <p>We stay with you after launch &mdash; tweaks, improvements and help whenever you need it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section id="contact" class="pg-section pg-alt">
+  <div class="pg-wrap pg-narrow">
+    <div class="pg-kicker">Get in touch</div>
+    <h2 class="pg-h2">Let&rsquo;s set up your <span class="glow-word">automation</span></h2>
+    <p class="pg-lead">Tell us a little about your business. Hit send and it opens WhatsApp with your message ready &mdash; we&rsquo;ll reply fast.</p>
+    <div class="pg-form">
+      <div class="pg-field">
+        <label for="cf-name">Your name</label>
+        <input id="cf-name" type="text" placeholder="e.g. Gowtham" />
+      </div>
+      <div class="pg-field">
+        <label for="cf-biz">Business type</label>
+        <input id="cf-biz" type="text" placeholder="Hotel / Restaurant / Hospital" />
+      </div>
+      <div class="pg-field">
+        <label for="cf-msg">What do you want to automate?</label>
+        <textarea id="cf-msg" rows="4" placeholder="e.g. Table bookings and order confirmations on WhatsApp"></textarea>
+      </div>
+      <button class="cta" id="cf-send" type="button" style="border:none;cursor:pointer;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="#0a0312"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.06 2.87 1.21 3.07.15.2 2.09 3.2 5.07 4.49.71.31 1.26.49 1.69.62.71.23 1.36.19 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35zM12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.07L2 22l5.05-1.32A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+        Send on WhatsApp
+      </button>
+      <div class="pg-direct">
+        Or reach us directly &mdash;
+        <a class="js-whatsapp" href="#">WhatsApp</a> ·
+        <a class="js-email" href="#">Email</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer id="footer">
+  <div class="pg-wrap pg-foot">
+    <div class="pg-foot-brand">
+      <img src="ys_logo.png" alt="Ystress logo" />
+      <span>Ystress</span>
+      <p>WhatsApp automation for hotels, restaurants and hospitals &mdash; bookings, reminders and support, handled instantly.</p>
+    </div>
+    <div class="pg-foot-col">
+      <h4>Explore</h4>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="js-whatsapp" href="#">Chat on WhatsApp</a>
+    </div>
+    <div class="pg-foot-col">
+      <h4>Legal</h4>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+    </div>
+    <div class="pg-foot-col">
+      <h4>Contact</h4>
+      <a class="js-whatsapp" href="#">+91 97908 95262</a>
+      <a class="js-email" href="#">sukanyacadburies@gmail.com</a>
+    </div>
+  </div>
+  <div class="pg-copy">© <span id="yr"></span> Ystress. All rights reserved.</div>
+</footer>
+
+<script>
+/* ===== CONTACT DETAILS ===== */
+var PHONE = "919790895262";          // +91 97908 95262
+var EMAIL = "sukanyacadburies@gmail.com";
+var WA_TEXT = "Hi! I'd like to know about your WhatsApp automation for my business.";
+var DEMO_TEXT = "Hi! I'd like to book a free demo of your WhatsApp automation.";
+
+function openWhatsApp(text){
+  window.open("https://wa.me/" + PHONE + "?text=" + encodeURIComponent(text), "_blank");
+}
+function openConnect(){
+  // Connect = WhatsApp + email choice; default opens WhatsApp
+  openWhatsApp("Hi! I'd like to connect about your automation services.");
+}
+
+document.querySelectorAll('.js-whatsapp').forEach(function(el){
+  el.addEventListener('click', function(e){ e.preventDefault(); openWhatsApp(WA_TEXT); });
+});
+document.querySelectorAll('.js-demo').forEach(function(el){
+  el.addEventListener('click', function(e){ e.preventDefault(); openWhatsApp(DEMO_TEXT); });
+});
+document.querySelectorAll('.js-connect').forEach(function(el){
+  el.addEventListener('click', function(e){ e.preventDefault(); openConnect(); });
+});
+document.querySelectorAll('.js-email').forEach(function(el){
+  el.addEventListener('click', function(e){ e.preventDefault();
+    window.location.href = "mailto:" + EMAIL + "?subject=" + encodeURIComponent("WhatsApp Automation Enquiry");
+  });
+});
+
+/* ===== CONTACT FORM -> WhatsApp ===== */
+(function(){
+  var btn=document.getElementById('cf-send');
+  if(!btn)return;
+  btn.addEventListener('click',function(){
+    var name=(document.getElementById('cf-name').value||'').trim();
+    var biz=(document.getElementById('cf-biz').value||'').trim();
+    var msg=(document.getElementById('cf-msg').value||'').trim();
+    var text="Hi Ystress! I'd like to set up WhatsApp automation.";
+    if(name) text+="\n\nName: "+name;
+    if(biz)  text+="\nBusiness: "+biz;
+    if(msg)  text+="\nWhat to automate: "+msg;
+    openWhatsApp(text);
+  });
+})();
+
+/* footer year */
+(function(){var y=document.getElementById('yr'); if(y) y.textContent=new Date().getFullYear();})();
+
+/* ===== MATH ===== */
+function easeInOut(t){return t<0.5?2*t*t:-1+(4-2*t)*t;}
+function lerp(a,b,t){return a+(b-a)*t;}
+function clamp(v,min,max){return Math.max(min,Math.min(max,v));}
+var MAG={video:8};
+var videoWrap=document.getElementById('video-wrap');
+var grade=document.getElementById('grade');
+var hero1=document.getElementById('hero1');
+var services=document.getElementById('services');
+var hero2=document.getElementById('hero2');
+var nav=document.getElementById('nav');
+var entrances=document.querySelectorAll('.entrance');
+var target={rx:0,ry:0},current={rx:0,ry:0},scrollProgress=0;
+
+/* smooth-scroll a nav link to a given progress (0..1) */
+function scrollToProgress(p){
+  var scrollable=document.documentElement.scrollHeight-window.innerHeight;
+  window.scrollTo({top:scrollable*p, behavior:'smooth'});
+}
+
+setTimeout(function(){
+  nav.classList.add('show');
+  for(var i=0;i<entrances.length;i++)entrances[i].classList.add('show');
+},600);
+
+function onScroll(){
+  var scrollable=document.documentElement.scrollHeight-window.innerHeight;
+  scrollProgress=scrollable>0?clamp(window.scrollY/scrollable,0,1):0;
+}
+window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+window.addEventListener('mousemove',function(e){
+  var cx=window.innerWidth/2,cy=window.innerHeight/2;
+  target.rx=clamp((e.clientX-cx)/cx,-1,1);
+  target.ry=clamp((e.clientY-cy)/cy,-1,1);
+});
+
+function tick(){
+  current.rx=lerp(current.rx,target.rx,0.07);
+  current.ry=lerp(current.ry,target.ry,0.07);
+  var rx=current.rx,ry=current.ry,sp=scrollProgress;
+  var vScale=lerp(1,1.6,sp);
+  videoWrap.style.transform='scale('+vScale+') translate3d('+(rx*MAG.video)+'px,'+(ry*MAG.video)+'px,0)';
+  grade.style.opacity=lerp(1,1.25,sp);
+  hero1.style.opacity=clamp(1-sp/0.22,0,1);
+  hero1.style.pointerEvents=sp<0.18?'auto':'none';
+  /* services: fade in ~0.30, hold, fade out ~0.62 */
+  var svcIn=clamp((sp-0.30)/0.10,0,1);
+  var svcOut=clamp((sp-0.58)/0.08,0,1);
+  var svcO=svcIn*(1-svcOut);
+  services.style.opacity=svcO;
+  services.style.pointerEvents=svcO>0.5?'auto':'none';
+  var h2o=clamp((sp-0.72)/0.14,0,1);
+  hero2.style.opacity=h2o;
+  hero2.style.pointerEvents=h2o>0.5?'auto':'none';
+  requestAnimationFrame(tick);
+}
+requestAnimationFrame(tick);
+
+/* ===== COVERFLOW SLIDER ===== */
+var cfStage=document.getElementById('cfStage');
+var cfCards=Array.prototype.slice.call(cfStage.querySelectorAll('.svc-card'));
+var cfDots=document.getElementById('cfDots');
+var cfCurrent=0;
+cfCards.forEach(function(card,i){
+  card.addEventListener('click',function(){cfGo(i);});
+  var d=document.createElement('button');
+  d.addEventListener('click',function(e){e.stopPropagation();cfGo(i);});
+  cfDots.appendChild(d);
+});
+var cfDotEls=Array.prototype.slice.call(cfDots.children);
+function cfRender(){
+  var vw=document.documentElement.clientWidth||window.innerWidth;
+  var phone = vw<560;
+  /* responsive spread: phones = single card, tablet/desktop = fanned */
+  var spread = phone ? vw*0.9 : (vw<1024 ? 120 : 170);
+  var depth  = phone ? 60 : 200;
+  var rot    = phone ? 0 : -28;
+  var maxVisible = phone ? 0 : 2;   /* phones: only the active card */
+  cfCards.forEach(function(card,i){
+    var off=i-cfCurrent, abs=Math.abs(off);
+    var tx=off*spread, tz=-abs*depth, ry=off*rot, sc=1-abs*0.10;
+    var op=abs>maxVisible?0:1-abs*(phone?1:0.42);
+    card.style.transform='translateX('+tx+'px) translateZ('+tz+'px) rotateY('+ry+'deg) scale('+sc+')';
+    card.style.opacity=op;
+    card.style.zIndex=String(100-abs);
+    card.style.pointerEvents=abs>maxVisible?'none':'auto';
+    card.classList.toggle('active',i===cfCurrent);
+  });
+  cfDotEls.forEach(function(d,i){d.classList.toggle('on',i===cfCurrent);});
+}
+function cfGo(i){cfCurrent=Math.max(0,Math.min(cfCards.length-1,i));cfRender();}
+function cfNext(){cfGo((cfCurrent+1)%cfCards.length);}
+function cfPrev(){cfGo((cfCurrent-1+cfCards.length)%cfCards.length);}
+cfRender();
+window.addEventListener('resize',cfRender,{passive:true});
+/* touch swipe */
+var cfSX=null;
+cfStage.addEventListener('touchstart',function(e){cfSX=e.touches[0].clientX;},{passive:true});
+cfStage.addEventListener('touchend',function(e){
+  if(cfSX===null)return;var dx=e.changedTouches[0].clientX-cfSX;
+  if(dx<-40)cfNext();else if(dx>40)cfPrev();cfSX=null;
+},{passive:true});
+/* nav links jump to a slide + scroll into the services band */
+function goSlide(i){cfGo(i);scrollToProgress(0.42);}
+
+/* ===== 3D ICON TILT (per card) ===== */
+cfCards.forEach(function(card){
+  var scene=card.querySelector('.scene3d');
+  if(!scene)return;
+  var tx=0,ty=0,rx=0,ry=0,raf=null;
+  function animate(){
+    rx+=(tx-rx)*0.1; ry+=(ty-ry)*0.1;
+    scene.style.transform='rotateX('+ry+'deg) rotateY('+rx+'deg)';
+    if(Math.abs(tx-rx)>0.05||Math.abs(ty-ry)>0.05){raf=requestAnimationFrame(animate);}else{raf=null;}
+  }
+  function kick(){if(!raf)raf=requestAnimationFrame(animate);}
+  card.addEventListener('mousemove',function(e){
+    var r=card.getBoundingClientRect();
+    tx=((e.clientX-r.left)/r.width-0.5)*30;
+    ty=-((e.clientY-r.top)/r.height-0.5)*30;
+    kick();
+  });
+  card.addEventListener('mouseleave',function(){tx=0;ty=0;kick();});
+});
+</script>
+</body>
+</html>
